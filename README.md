@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Academic Personal Website Template
 
-## Getting Started
+A modern, highly-polished, and modular personal website template built for academics, researchers, and PhD students. It is designed to be easily extensible, visually premium, and lightning-fast. 
 
-First, run the development server:
+Built beautifully with **Next.js 16**, **Tailwind CSS**, **Framer Motion**, and **shadcn/ui**.
+
+## 🌟 Features
+- **Extremely Modular:** Constructed with semantic React components instead of generic sprawling `<div>` tags making adding new sections intuitive.
+- **Data-Driven:** All core data (projects, news, CV, social links, papers) is managed in easily-editable JSON config files in the `/src/content/` directory. No need to hunt through TSX files!
+- **Dark Mode Support:** Fluid and instantaneous dark/light mode toggling utilizing `next-themes` and a meticulously crafted custom color-palette.
+- **BibTeX Integration:** Built-in copy-to-clipboard functionality for paper abstracts and citations.
+- **Fully Responsive:** Perfectly tailored styles wrapping efficiently on both ultrawide desktop monitors and mobile devices without overflowing horizontal panels.
+
+---
+
+## 🚀 Getting Started
+
+First, install the required dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, run the development server locally:
+```bash
+npm run dev
+```
+Navigate to `http://localhost:3000` to view the website. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ How to Customize for Yourself
 
-## Learn More
+This template is built so you can deploy your own instance rapidly without touching the core UI components. All your personal data is driven from JSON!
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Update Site Constants
+Navigate to `src/content/site-config.json`.
+Here you can update your Name, exact job Title, Affiliation, short Tagline, and all your social media links (Google Scholar, Github, LinkedIn, X, Orcid).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Update the "About Me" & "News" Sections
+Navigate to `src/content/about.json`. 
+Update the `bio` array for paragraphs, and add objects into the `news` array. The dates will automatically be formatted with circular badges!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Upload your Photo
+Add a crisp photo to `public/images/profile.svg` (or `.jpg`/`.png`) and update the `profileImage` string inside `site-config.json` to point your image.
 
-## Deploy on Vercel
+### 4. Updating Publications
+Put your papers into `src/content/publications.json`. The `PublicationCard` component will automatically generate PDF, Code, Video, and BibTeX button actions based on which fields you provide!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💻 Tech Stack Overview
+- Framework: [Next.js App Router](https://nextjs.org/)
+- Styling: [TailwindCSS](https://tailwindcss.com/)
+- Animations: [Framer Motion](https://www.framer.com/motion/)
+- UI Components: [shadcn/ui](https://ui.shadcn.com/)
+- Icons: [Lucide React](https://lucide.dev/)
+
+*Feel free to star, fork, and use this template for your own academic profile! Contributions and feature requests are always welcome.*

@@ -1,0 +1,81 @@
+---
+title: "Understanding Transformer Architectures: A Practical Guide"
+date: "2025-11-15"
+tags: ["transformers", "deep learning", "tutorial"]
+excerpt: "A deep dive into the transformer architecture, from self-attention to modern efficient variants, with practical implementation insights."
+draft: false
+---
+
+## Introduction
+
+The transformer architecture has revolutionized machine learning since its introduction in the seminal paper *Attention Is All You Need*. In this post, we'll explore the key components and recent advances.
+
+## The Self-Attention Mechanism
+
+At the heart of every transformer is the self-attention mechanism. Given an input sequence, self-attention computes a weighted sum of all positions, allowing each token to attend to every other token.
+
+The attention function can be described as:
+
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+
+Where $Q$, $K$, and $V$ are the query, key, and value matrices respectively, and $d_k$ is the dimension of the keys.
+
+## Multi-Head Attention
+
+Rather than performing a single attention function, transformers use **multi-head attention**, which runs several attention operations in parallel:
+
+```python
+import torch
+import torch.nn as nn
+
+class MultiHeadAttention(nn.Module):
+    def __init__(self, d_model, n_heads):
+        super().__init__()
+        self.d_model = d_model
+        self.n_heads = n_heads
+        self.d_k = d_model // n_heads
+
+        self.W_q = nn.Linear(d_model, d_model)
+        self.W_k = nn.Linear(d_model, d_model)
+        self.W_v = nn.Linear(d_model, d_model)
+        self.W_o = nn.Linear(d_model, d_model)
+
+    def forward(self, x):
+        batch_size, seq_len, _ = x.shape
+
+        Q = self.W_q(x).view(batch_size, seq_len, self.n_heads, self.d_k).transpose(1, 2)
+        K = self.W_k(x).view(batch_size, seq_len, self.n_heads, self.d_k).transpose(1, 2)
+        V = self.W_v(x).view(batch_size, seq_len, self.n_heads, self.d_k).transpose(1, 2)
+
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / (self.d_k ** 0.5)
+        attn = torch.softmax(scores, dim=-1)
+        context = torch.matmul(attn, V)
+
+        context = context.transpose(1, 2).contiguous().view(batch_size, seq_len, self.d_model)
+        return self.W_o(context)
+```
+
+## Efficient Variants
+
+The quadratic complexity of self-attention has motivated several efficient alternatives:
+
+| Method | Complexity | Key Idea |
+|--------|-----------|----------|
+| Sparse Attention | $O(n\sqrt{n})$ | Attend to fixed sparse patterns |
+| Linear Attention | $O(n)$ | Kernel-based approximation |
+| Flash Attention | $O(n^2)$ memory-efficient | IO-aware tiling |
+
+## Key Takeaways
+
+1. **Self-attention** enables global context but scales quadratically
+2. **Multi-head attention** allows the model to attend to different representation subspaces
+3. **Efficient variants** make transformers practical for long sequences
+4. The field is rapidly evolving with new architectures emerging regularly
+
+> The transformer architecture represents one of the most significant advances in deep learning, enabling breakthroughs across NLP, computer vision, and beyond.
+
+## What's Next
+
+In future posts, we'll explore specific efficient transformer implementations and benchmark them on real-world tasks. Stay tuned!

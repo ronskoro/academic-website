@@ -1,0 +1,55 @@
+[
+  {
+    "slug": "efficient-transformers",
+    "title": "Efficient Transformer Architectures",
+    "description": "Developing transformer architectures with sub-quadratic complexity for processing long sequences, enabling efficient reasoning over large documents and codebases.",
+    "tags": ["Transformers", "Efficiency", "NLP"],
+    "status": "active",
+    "startDate": "2024-06",
+    "relatedPublications": ["efficient-transformers-2026"],
+    "links": {
+      "code": "#",
+      "paper": "#"
+    }
+  },
+  {
+    "slug": "adaptive-masking",
+    "title": "Adaptive Self-Supervised Learning",
+    "description": "Designing adaptive masking strategies for self-supervised pre-training that dynamically adjust to input complexity, improving downstream task performance.",
+    "tags": ["Self-Supervised", "Pre-training", "Vision"],
+    "status": "completed",
+    "startDate": "2023-09",
+    "endDate": "2025-05",
+    "relatedPublications": ["repr-learning-2025"],
+    "links": {
+      "code": "#",
+      "paper": "#"
+    }
+  },
+  {
+    "slug": "model-compression",
+    "title": "Neural Network Compression Toolkit",
+    "description": "Building an open-source toolkit for structured pruning and quantization of deep learning models, targeting efficient deployment on edge devices.",
+    "tags": ["Compression", "Pruning", "Edge AI"],
+    "status": "active",
+    "startDate": "2024-01",
+    "relatedPublications": ["pruning-2024"],
+    "links": {
+      "code": "#",
+      "demo": "#"
+    }
+  },
+  {
+    "slug": "scaling-laws",
+    "title": "Theoretical Foundations of Scaling Laws",
+    "description": "Investigating the mathematical foundations underlying neural scaling laws, providing theoretical guarantees and practical guidance for efficient model scaling.",
+    "tags": ["Theory", "Scaling", "Foundation Models"],
+    "status": "completed",
+    "startDate": "2023-01",
+    "endDate": "2024-06",
+    "relatedPublications": ["scaling-laws-2023"],
+    "links": {
+      "paper": "#"
+    }
+  }
+]

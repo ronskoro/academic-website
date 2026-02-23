@@ -1,0 +1,32 @@
+{
+  "courses": [
+    {
+      "code": "CS 680",
+      "title": "Advanced Machine Learning",
+      "semester": "Fall 2025",
+      "year": 2025,
+      "institution": "Your University",
+      "role": "Teaching Assistant",
+      "description": "Graduate-level course covering advanced topics in machine learning including deep learning, generative models, and reinforcement learning."
+    },
+    {
+      "code": "CS 480",
+      "title": "Introduction to Deep Learning",
+      "semester": "Spring 2025",
+      "year": 2025,
+      "institution": "Your University",
+      "role": "Teaching Assistant",
+      "description": "Undergraduate course introducing neural networks, CNNs, RNNs, and modern deep learning techniques."
+    },
+    {
+      "code": "CS 330",
+      "title": "Data Structures and Algorithms",
+      "semester": "Fall 2024",
+      "year": 2024,
+      "institution": "Your University",
+      "role": "Teaching Assistant",
+      "description": "Core undergraduate course on fundamental data structures and algorithm design."
+    }
+  ],
+  "advisees": []
+}

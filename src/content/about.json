@@ -1,0 +1,39 @@
+{
+  "bio": [
+    "I am a PhD researcher in Computer Science, specializing in machine learning and artificial intelligence. My research focuses on developing efficient and scalable methods for deep learning.",
+    "Previously, I completed my Master's degree in Computer Science and my Bachelor's degree in Mathematics. I have published at top-tier venues including NeurIPS, ICML, and CVPR.",
+    "When not researching, I enjoy mentoring students, contributing to open-source projects, and exploring the intersection of AI and other scientific disciplines."
+  ],
+  "researchInterests": [
+    "Deep Learning",
+    "Natural Language Processing",
+    "Computer Vision",
+    "Efficient ML",
+    "Neural Architecture Search",
+    "Representation Learning",
+    "Transfer Learning",
+    "Foundation Models"
+  ],
+  "news": [
+    {
+      "date": "2025-12",
+      "text": "Paper accepted at AAAI 2026 on efficient transformer architectures."
+    },
+    {
+      "date": "2025-09",
+      "text": "Invited talk at the ML Systems Workshop at NeurIPS 2025."
+    },
+    {
+      "date": "2025-06",
+      "text": "Started internship at a leading AI research lab."
+    },
+    {
+      "date": "2025-03",
+      "text": "Received the Outstanding Graduate Researcher Award."
+    },
+    {
+      "date": "2024-12",
+      "text": "Paper accepted at ICLR 2025 on representation learning."
+    }
+  ]
+}

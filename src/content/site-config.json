@@ -1,0 +1,26 @@
+{
+  "name": "Your Name",
+  "firstName": "Your",
+  "lastName": "Name",
+  "title": "PhD Researcher in Computer Science",
+  "affiliation": "Your University",
+  "department": "Department of Computer Science",
+  "lab": "AI Research Lab",
+  "labUrl": "https://example.com/lab",
+  "tagline": "Advancing the frontiers of machine learning and artificial intelligence.",
+  "email": "your.name@university.edu",
+  "siteUrl": "https://yourname.dev",
+  "profileImage": "/images/profile.svg",
+  "social": {
+    "googleScholar": "https://scholar.google.com/citations?user=XXXXX",
+    "github": "https://github.com/yourname",
+    "twitter": "https://twitter.com/yourname",
+    "linkedin": "https://linkedin.com/in/yourname",
+    "orcid": "https://orcid.org/0000-0000-0000-0000"
+  },
+  "nav": [
+    { "label": "Publications", "href": "/publications" },
+    { "label": "CV", "href": "/cv" },
+    { "label": "Blog", "href": "/blog" }
+  ]
+}

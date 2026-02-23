@@ -1,65 +1,105 @@
-import Image from "next/image";
+import { HeroSection } from "@/components/hero/hero-section";
+import { SectionWrapper } from "@/components/common/section-wrapper";
+import { AnimatedSection } from "@/components/common/animated-section";
+import { TagChip } from "@/components/common/tag-chip";
+import { PublicationCard } from "@/components/publications/publication-card";
+import { ProjectCard } from "@/components/projects/project-card";
+import { getFeaturedPublications } from "@/lib/publications";
+import aboutData from "@/content/about.json";
+import projectsData from "@/content/projects.json";
+import siteConfig from "@/content/site-config.json";
+import { Project } from "@/types/project";
+import { ProfileImage } from "@/components/home/profile-image";
+import { NewsItem } from "@/components/home/news-item";
+import { SectionHeader } from "@/components/home/section-header";
+
+const projects = projectsData as Project[];
+
+
 
 export default function Home() {
+  const featured = getFeaturedPublications();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <HeroSection />
+
+      {/* About */}
+      <SectionWrapper id="about">
+        <div className="grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-12">
+          <AnimatedSection>
+            <ProfileImage src={siteConfig.profileImage} alt={`Photo of ${siteConfig.name}`} />
+          </AnimatedSection>
+
+          <div className="space-y-5">
+            <AnimatedSection delay={0.075}>
+              <div className="space-y-3 text-base leading-relaxed text-foreground-muted">
+                {aboutData.bio.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15}>
+              <div className="flex flex-wrap gap-2">
+                {aboutData.researchInterests.map((interest) => (
+                  <TagChip key={interest} label={interest} />
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </SectionWrapper>
+
+      {/* News */}
+      {aboutData.news.length > 0 && (
+        <SectionWrapper id="news">
+          <AnimatedSection>
+            <SectionHeader title="News" />
+          </AnimatedSection>
+          <div className="mt-6 space-y-4">
+            {aboutData.news.slice(0, 5).map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.05}>
+                <NewsItem date={item.date} text={item.text} />
+              </AnimatedSection>
+            ))}
+          </div>
+        </SectionWrapper>
+      )}
+
+      {/* Selected Publications */}
+      <SectionWrapper id="publications">
+        <AnimatedSection>
+          <SectionHeader
+            title="Selected Publications"
+            linkHref="/publications"
+            linkLabel="View all"
+          />
+        </AnimatedSection>
+        <div className="mt-4 space-y-3">
+          {featured.slice(0, 3).map((pub, i) => (
+            <AnimatedSection key={pub.id} delay={i * 0.075}>
+              <PublicationCard publication={pub} />
+            </AnimatedSection>
+          ))}
         </div>
-      </main>
-    </div>
+      </SectionWrapper>
+
+      {/* Projects */}
+      {projects.length > 0 && (
+        <SectionWrapper id="projects">
+          <AnimatedSection>
+            <SectionHeader title="Projects" />
+          </AnimatedSection>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {projects.slice(0, 4).map((project, i) => (
+              <AnimatedSection key={project.slug} delay={i * 0.075}>
+                <ProjectCard project={project} />
+              </AnimatedSection>
+            ))}
+          </div>
+        </SectionWrapper>
+      )}
+    </>
   );
 }

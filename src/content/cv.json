@@ -1,0 +1,98 @@
+{
+  "sections": [
+    {
+      "id": "education",
+      "title": "Education",
+      "entries": [
+        {
+          "title": "Ph.D. in Computer Science",
+          "organization": "Your University",
+          "location": "City, State",
+          "startDate": "2022",
+          "endDate": "Present",
+          "description": "Research focus: Efficient machine learning and neural architecture design.",
+          "details": ["Advisor: Prof. Jane Doe", "GPA: 4.0/4.0"]
+        },
+        {
+          "title": "M.S. in Computer Science",
+          "organization": "Your University",
+          "location": "City, State",
+          "startDate": "2020",
+          "endDate": "2022",
+          "description": "Thesis: Adaptive Methods for Self-Supervised Learning."
+        },
+        {
+          "title": "B.S. in Mathematics",
+          "organization": "Another University",
+          "location": "City, State",
+          "startDate": "2016",
+          "endDate": "2020",
+          "description": "Graduated summa cum laude.",
+          "details": ["Minor in Computer Science", "Dean's List all semesters"]
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "entries": [
+        {
+          "title": "Research Intern",
+          "organization": "Major Tech Company",
+          "location": "City, State",
+          "startDate": "June 2025",
+          "endDate": "Sept 2025",
+          "description": "Worked on efficient inference methods for large language models.",
+          "details": ["Reduced inference latency by 40%", "Co-authored internal technical report"]
+        },
+        {
+          "title": "Graduate Research Assistant",
+          "organization": "AI Research Lab, Your University",
+          "startDate": "2022",
+          "endDate": "Present",
+          "description": "Conducting research on efficient deep learning architectures and neural architecture search."
+        }
+      ]
+    },
+    {
+      "id": "awards",
+      "title": "Awards & Honors",
+      "entries": [
+        {
+          "title": "Outstanding Graduate Researcher Award",
+          "organization": "Your University",
+          "startDate": "2025"
+        },
+        {
+          "title": "Best Paper Finalist",
+          "organization": "NeurIPS Workshop",
+          "startDate": "2024"
+        },
+        {
+          "title": "Graduate Fellowship",
+          "organization": "Your University",
+          "startDate": "2022",
+          "endDate": "2025"
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "title": "Professional Service",
+      "entries": [
+        {
+          "title": "Reviewer",
+          "organization": "NeurIPS, ICML, ICLR, CVPR",
+          "startDate": "2023",
+          "endDate": "Present"
+        },
+        {
+          "title": "Organizer",
+          "organization": "ML Reading Group, Your University",
+          "startDate": "2023",
+          "endDate": "Present"
+        }
+      ]
+    }
+  ]
+}
