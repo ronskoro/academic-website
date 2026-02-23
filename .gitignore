@@ -42,3 +42,14 @@ next-env.d.ts
 
 # local logs
 .next-dev.log
+*.log
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# caches
+.eslintcache
