@@ -8,6 +8,7 @@ import { SkipToContent } from "@/components/layout/skip-to-content";
 import { GrainOverlay } from "@/components/common/grain-overlay";
 import { JsonLd } from "@/components/common/json-ld";
 import { generatePersonSchema } from "@/lib/json-ld";
+import { EasterEgg } from "@/components/common/easter-egg";
 import siteConfig from "@/content/site-config.json";
 import "./globals.css";
 
@@ -53,11 +54,13 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          themes={["light", "dark", "retro"]}
           disableTransitionOnChange
         >
           <TooltipProvider delayDuration={300}>
             <div className="relative flex min-h-screen flex-col overflow-hidden">
               <GrainOverlay />
+              <EasterEgg />
               <SkipToContent />
               <Header />
               <main id="main-content" className="flex-1 pt-16">
